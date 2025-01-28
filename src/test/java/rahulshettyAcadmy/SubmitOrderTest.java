@@ -44,11 +44,15 @@ public class SubmitOrderTest {
 
 		Boolean match = cartpage.VeryFyProductDisplay(proDuctName);
 		Assert.assertTrue(match);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,250)");
+		
+		
+		
 		CheckOutPage checkoutPage = cartpage.goToCheckOut();
 		checkoutPage.selectCountry("india");
-			
+		
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		
+		jse.executeScript("window.scrollBy(0,200)");
 		conformationPage conformMessgae = checkoutPage.submitOrder();
 		
 		

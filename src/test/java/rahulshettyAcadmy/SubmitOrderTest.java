@@ -1,5 +1,6 @@
 package rahulshettyAcadmy;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.bytebuddy.implementation.bytecode.Duplication;
@@ -21,20 +23,20 @@ import rahulShettyAcadmey.pageobjects.CheckOutPage;
 import rahulShettyAcadmey.pageobjects.conformationPage;
 import rahulShettyAcadmey.pageobjects.landingPage;
 import rahulShettyAcadmey.pageobjects.productCatlog;
+import rahulshettyacademy.TestComponents.BaseTest;
 
-public class SubmitOrderTest {
-	public static void main(String[] args) throws InterruptedException {
+public class SubmitOrderTest extends BaseTest{
+
+	@Test
+	public void submitOrder() throws IOException, InterruptedException
+	{
 
 		String proDuctName = "IPHONE 13 PRO";
 
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.manage().window().maximize();
-
+		
+		landingPage landingPage=LaunchApplication();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		landingPage landingPage = new landingPage(driver);
-		landingPage.goTo();
+		
 		productCatlog productCatLogue = landingPage.loginApplication("dnyaneshwarghate1010@gmail.com", "Dghate@2025");
 
 		List<WebElement> products = productCatLogue.getProductList();

@@ -13,12 +13,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import rahulShettyAcadmey.pageobjects.landingPage;
 
 public class BaseTest {
 
 	public WebDriver driver;
 
-	public void initDriver() throws IOException {
+	public WebDriver initDriver() throws IOException {
 
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"src/main/java/rahulshettyacademy/Resources/GlobalData.properties");
@@ -48,7 +49,16 @@ public class BaseTest {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
+		return driver;
 
 	}
 
+	public landingPage LaunchApplication() throws IOException
+	{
+		driver=initDriver();
+		landingPage landingPage = new landingPage(driver);
+		landingPage.goTo();
+		return landingPage;
+		
+	}
 }

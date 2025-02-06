@@ -31,7 +31,7 @@ public class SubmitOrderTest extends BaseTest{
 	public void submitOrder() throws IOException, InterruptedException
 	{
 
-		//String proDuctName = "IPHONE 13 PRO";
+		String proDuctName = "IPHONE 13 PRO";
 
 		
 		landingPage landingPage=LaunchApplication();

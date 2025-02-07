@@ -53,12 +53,12 @@ public class SubmitOrderTest extends BaseTest{
 
 		
 
-	}/*
+	}
 	@Test(dependsOnMethods = {"submitOrder"})
 	public void orderHistoryTest()
 	{
 		productCatlog productCatLogue = landingPage.loginApplication("dnyaneshwarghate1010@gmail.com", "Dghate@2025");
 		
 	}
-*/
+
 }

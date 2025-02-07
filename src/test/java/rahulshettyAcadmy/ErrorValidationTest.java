@@ -25,7 +25,7 @@ import rahulShettyAcadmey.pageobjects.landingPage;
 import rahulShettyAcadmey.pageobjects.productCatlog;
 import rahulshettyacademy.TestComponents.BaseTest;
 
-public class ErrorValidation extends BaseTest{
+public class ErrorValidationTest extends BaseTest{
 
 	@Test
 	public void loginErrorValidation() throws IOException, InterruptedException
@@ -34,12 +34,13 @@ public class ErrorValidation extends BaseTest{
 		String proDuctName = "IPHONE 13 PRO";
 		
 		
-		productCatlog productCatLogue = landingPage.loginApplication("dnyaneshwarghate1@gmail.com", "Dghate@2025");
+		productCatlog productCatLogue = landingPage.loginApplication("dnyanegshwarghate1010@gmail.com", "Dghate@2025");
 		Assert.assertEquals(" Incorrect email or password.",landingPage.getErrorMessage());
 	
 		
 
 	}
+	@Test
 	public void productErrorValidation() throws IOException, InterruptedException
 	{
 		String proDuctName = "IPHONE 13 PRO";

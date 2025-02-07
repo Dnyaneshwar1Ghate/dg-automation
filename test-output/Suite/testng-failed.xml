@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="submit order (failed)">
+    <classes>
+      <class name="rahulshettyAcadmy.SubmitOrderTest">
+        <methods>
+          <include name="LaunchApplication"/>
+          <include name="submitOrder"/>
+        </methods>
+      </class> <!-- rahulshettyAcadmy.SubmitOrderTest -->
+    </classes>
+  </test> <!-- submit order (failed) -->
+  <test thread-count="5" name="Error validation  (failed)">
+    <classes>
+      <class name="rahulshettyAcadmy.ErrorValidationTest">
+        <methods>
+          <include name="LaunchApplication"/>
+          <include name="productErrorValidation"/>
+          <include name="loginErrorValidation"/>
+        </methods>
+      </class> <!-- rahulshettyAcadmy.ErrorValidationTest -->
+    </classes>
+  </test> <!-- Error validation  (failed) -->
+</suite> <!-- Failed suite [Suite] -->

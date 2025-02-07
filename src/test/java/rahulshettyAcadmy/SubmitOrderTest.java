@@ -30,40 +30,35 @@ public class SubmitOrderTest extends BaseTest{
 	@Test
 	public void submitOrder() throws IOException, InterruptedException
 	{
-
 		String proDuctName = "IPHONE 13 PRO";
-
-		
+	
 		landingPage landingPage=LaunchApplication();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		
 		productCatlog productCatLogue = landingPage.loginApplication("dnyaneshwarghate1010@gmail.com", "Dghate@2025");
-
 		List<WebElement> products = productCatLogue.getProductList();
 		productCatLogue.addProductToCart(proDuctName);
-
 		CartPage cartpage = productCatLogue.gotoCartPage();
-
 		Boolean match = cartpage.VeryFyProductDisplay(proDuctName);
 		Assert.assertTrue(match);
-		
-		
-		
+					
 		CheckOutPage checkoutPage = cartpage.goToCheckOut();
 		checkoutPage.selectCountry("india");
-		
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		
-		jse.executeScript("window.scrollBy(0,1500)");
+		jse.executeScript("window.scrollBy(0,800)");
 		
 		conformationPage conformMessgae = checkoutPage.submitOrder();
-		
-		
+				
 		String Messge = conformMessgae.verfyConformationPage();
 		Assert.assertTrue(Messge.equalsIgnoreCase("Thankyou for the order."));
 
 		
 
+	}/*
+	@Test(dependsOnMethods = {"submitOrder"})
+	public void orderHistoryTest()
+	{
+		productCatlog productCatLogue = landingPage.loginApplication("dnyaneshwarghate1010@gmail.com", "Dghate@2025");
+		
 	}
-
+*/
 }
